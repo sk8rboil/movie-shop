@@ -1,0 +1,20 @@
+<!-- <div class="card">
+    <p>{{movieList | json}}</p>
+</div> -->
+
+<div class="container">
+    <div class="row">
+        <ng-container  *ngFor="let item of movieList">
+            <ng-container *ngFor="let items of item.results">             
+                    <div class="card col-md-4">
+<!--                             <p>{{items.id}}</p> -->
+                            <img src="https://image.tmdb.org/t/p/w500/{{items.backdrop_path}}" alt="">  
+                            <p><strong>{{items.original_title}}</strong></p>   
+                            <p>{{items.overview}}</p>               
+                    </div>            
+            </ng-container>
+        </ng-container>
+
+
+    </div>
+</div>
