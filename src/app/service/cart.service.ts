@@ -41,6 +41,7 @@ export class CartService {
         this.cartItemList.splice(index,1);
       }
     })
+    this.movieList.next(this.cartItemList);     /* change value in cart */
   }
 
   removeAllCart(){

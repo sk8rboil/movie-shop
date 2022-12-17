@@ -1,4 +1,4 @@
-<ng-container *ngIf="true">
+<ng-container *ngIf="products.length != 0">  <!-- movie in cart -->
     <div class="card-table">
         <div class="card-product">
             <table class="table table-responsive">
@@ -14,14 +14,20 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let item of products; let i = index">
+                    <tr *ngFor="let items of products; let i = index">
                         <td>{{i+1}}</td>
-                        <td>{{item.original_title}}</td>
-                        <td><img src="https://image.tmdb.org/t/p/w500/{{item.poster_path}}" alt=""></td>
-                        <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, facilis?</td>
+                        <td>{{items.original_title}}</td>
+                        <td><img src="https://image.tmdb.org/t/p/w500/{{items.poster_path}}" alt="" style="height: 10rem;"></td>
+                        <td style="width: 12%;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, facilis?</td>
                         <td>23000</td>
                         <td>30000</td>
-                        <td><button (click)="removeItem(item)" class="btn btn-danger"><i class="fa-solid fa-trash-can"></i></button></td>
+                        <td><button (click)="removeItem(items)" class="btn btn-danger"><i class="fa-solid fa-trash-can"></i></button></td>
+                    </tr>
+                    <tr>
+                        <td colspan="4"></td>
+                        <td><button (click)="emptycart()" class="btn btn-danger">Empty Cart</button></td>
+                        <td><button routerLink="/movielist" class="btn btn-primary">Shop more</button></td>
+                        <td><button class="btn btn-success">Checkout</button></td>
                     </tr>
                 </tbody>
             </table>
@@ -29,7 +35,7 @@
     </div>
 </ng-container>
 
-<ng-container *ngIf="false">
+<ng-container *ngIf="products.length == 0"> <!-- cart empty -->
     <div class="container">
         <div class="card">
             <h5 class="card-title">
@@ -41,7 +47,7 @@
             <img src="https://images.unsplash.com/photo-1518043129420-ed9d4efcdcc9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8bW92aWUlMjBzaG9wfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
                 alt="">
             <h4>Cart is empty</h4>
-            <button class="btn btn-primary">Shop Movie Now</button>
+            <button routerLink="/movielist" class="btn btn-primary">Shop Movie Now</button>
         </div>
     </div>
 
