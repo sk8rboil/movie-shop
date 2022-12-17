@@ -14,14 +14,14 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>name</td>
-                        <td>image</td>
+                    <tr *ngFor="let item of products; let i = index">
+                        <td>{{i+1}}</td>
+                        <td>{{item.original_title}}</td>
+                        <td><img src="https://image.tmdb.org/t/p/w500/{{item.poster_path}}" alt=""></td>
                         <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, facilis?</td>
                         <td>23000</td>
                         <td>30000</td>
-                        <td><button class="btn btn-danger"><i class="fa-solid fa-trash-can"></i></button></td>
+                        <td><button (click)="removeItem(item)" class="btn btn-danger"><i class="fa-solid fa-trash-can"></i></button></td>
                     </tr>
                 </tbody>
             </table>
