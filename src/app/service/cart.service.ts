@@ -6,8 +6,10 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class CartService {
 
+
   public cartItemList : any=[];
   public movieList = new BehaviorSubject<any>([]);
+  public search = new BehaviorSubject<string>("");
 
   constructor() { }
 

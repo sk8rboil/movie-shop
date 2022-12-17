@@ -10,6 +10,7 @@ import { CartService } from 'src/app/service/cart.service';
 export class MovieListComponent implements OnInit{
   
   public movieList : any;
+  public searchKey : string = "";
   constructor(private api: ApiService,private cartService: CartService){ }
   ngOnInit(): void {
     this.api.getMovie().subscribe(res=>{
@@ -19,6 +20,10 @@ export class MovieListComponent implements OnInit{
       this.movieList.forEach((a:any) => {
         Object.assign(a,{quantity:1,total:a.price});
       });
+    });
+
+    this.cartService.search.subscribe((val : any)=>{
+      this.searchKey = val;
     })
   }
 

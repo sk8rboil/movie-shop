@@ -7,18 +7,23 @@ import { HeaderComponent } from './component/header/header.component';
 import { MovieListComponent } from './component/movie-list/movie-list.component';
 import { CartComponent } from './component/cart/cart.component';
 import { HttpClientModule } from '@angular/common/http';
+import { FilterPipe } from './shared/filter.pipe';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     MovieListComponent,
-    CartComponent
+    CartComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

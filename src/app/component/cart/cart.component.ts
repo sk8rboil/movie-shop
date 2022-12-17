@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 import { CartService } from 'src/app/service/cart.service';
 
 @Component({
@@ -10,6 +11,7 @@ export class CartComponent implements OnInit{
 
   public products : any = [];   //let product here
   public grandTotal !: number ;
+  public search = new BehaviorSubject<string>("");
 
   constructor(private cartService : CartService) { }
 
