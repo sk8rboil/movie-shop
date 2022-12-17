@@ -11,7 +11,8 @@
                             <img src="https://image.tmdb.org/t/p/w500/{{items.poster_path}}" alt="">    
                             <p><strong>{{items.original_title}}</strong></p>   
 <!--                             <p>{{items.overview}}</p> -->
-                            <p>{{items.vote_average}}</p>       
+                            <p>{{items.vote_average}}</p>     
+                            <button (click)="addtocart(items)" class="btn btn-primary">Add to cart</button>  
                     </div>            
             </ng-container>
         </ng-container>
