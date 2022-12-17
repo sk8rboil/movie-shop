@@ -5,11 +5,7 @@
     box-sizing: border-box; 
 }
 
-:root{
-    --primary-color: #22254b;
-    --secondary-color: #373b69;
-}
 
 body {
-    background-color: var(--primary);
+    background-color: #3F4E4F;
 }

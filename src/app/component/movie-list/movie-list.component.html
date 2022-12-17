@@ -2,18 +2,18 @@
     <p>{{movieList | json}}</p>
 </div> -->
 
-<div class="container-fluid">
+<div class="container">
     <div class="row ">
         <ng-container *ngFor="let item of movieList">
-            <ng-container *ngFor="let items of item.results | filter: searchKey: 'original_title' ">             
-                    <div class="card col-md-3">
-<!--                        <p>{{items.id}}</p> -->
-                            <img src="https://image.tmdb.org/t/p/w500/{{items.poster_path}}" alt="">    
-                            <p><strong>{{items.original_title}}</strong></p>   
-<!--                             <p>{{items.overview}}</p> -->
-                            <p>{{items.vote_average}}</p>     
-                            <button (click)="addtocart(items)" class="btn btn-primary">Add to cart</button>  
-                    </div>            
+            <ng-container *ngFor="let items of item.results | filter: searchKey: 'original_title' ">     
+                <div class="card col-sm-6 col-md-4 col-lg-3 g-0 my-2 text-white" style="background-color: #2C3639;">
+                    <img src="https://image.tmdb.org/t/p/w500/{{items.poster_path}}" alt="" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title"><strong>{{items.original_title}}</strong></h5>   
+                        <p>{{items.vote_average}}</p>  
+                        <a (click)="addtocart(items)" class="btn text-white" style="background-color: #e68022;">Add to cart</a>
+                    </div>
+                  </div>
             </ng-container>
         </ng-container>
 
