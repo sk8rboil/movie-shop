@@ -1,39 +1,46 @@
-<ng-container *ngIf="products.length != 0">  <!-- movie in cart -->
+<ng-container *ngIf="products.length != 0"> <!-- movie in cart -->
     <div class="container">
-     <div class="card-table">
-        <div class="card-product">
-            <table class="table text-white">
-                <thead>
-                    <tr>
-                        <th>No.</th>
-                        <th>Product Name</th>
-                        <th>Product Image</th>
-                        <th>Description</th>
-                        <th>Price</th>
-                        <th>Total</th>
-                        <th>Action</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr *ngFor="let items of products; let i = index">
-                        <td>{{i+1}}</td>
-                        <td>{{items.original_title}}</td>
-                        <td><img src="https://image.tmdb.org/t/p/w500/{{items.poster_path}}" alt="" style="height: 10rem;"></td>
-                        <td style="width: 12%;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, facilis?</td>
-                        <td>23000</td>
-                        <td>30000</td>
-                        <td><button (click)="removeItem(items)" class="btn btn-danger"><i class="fa-solid fa-trash-can"></i></button></td>
-                    </tr>
-                    <tr>
-                        <td colspan="4"></td>
-                        <td><button (click)="emptycart()" class="btn btn-danger">Empty Cart</button></td>
-                        <td><button routerLink="/movielist" class="btn btn-primary">Shop more</button></td>
-                        <td><button class="btn btn-success">Checkout</button></td>
-                    </tr>
-                </tbody>
-            </table>
+        <div class="card-table">
+            <div class="card-product">
+                <table class="table text-white">
+                    <thead>
+                        <tr>
+                            <th>No.</th>
+                            <th>Movie Name</th>
+                            <th>Image</th>
+                            <th>Overview</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let items of products; let i = index">
+                            <td>{{i+1}}</td>
+                            <td>{{items.original_title}}</td>
+                            <td><img src="https://image.tmdb.org/t/p/w500/{{items.poster_path}}" alt=""
+                                    style="height: 10rem;"></td>
+                            <td>{{items.overview}}</td>
+                            <td>
+                                <button (click)="removeItem(items)" class="btn btn-danger"><i
+                                        class="fa-solid fa-trash-can"></i></button>
+                            </td>
+                        </tr>
+
+                        <tr class="row"> 
+                            <td><button (click)="emptycart()" class="btn btn-danger">Empty Cart</button></td>
+                            <td><button routerLink="/movielist" class="btn btn-primary">Shop more</button></td>
+                            <td><button class="btn btn-success">Checkout</button>    </td>
+                              
+                        </tr>
+
+
+
+
+                    </tbody>
+                </table>
+
+
+            </div>
         </div>
-    </div>
     </div>
 
 </ng-container>
