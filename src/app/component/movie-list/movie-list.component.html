@@ -9,9 +9,26 @@
                 <div class="card col-sm-6 col-md-4 col-lg-3 g-0 my-2 text-white" style="background-color: #2C3639;">
                     <img src="https://image.tmdb.org/t/p/w500/{{items.poster_path}}" alt="" class="card-img-top">
                     <div class="card-body">
-                        <h5 class="card-title"><strong>{{items.original_title}}</strong></h5>   
-                        <p>{{items.vote_average}}</p>  
-                        <a (click)="addtocart(items)" class="btn text-white" style="background-color: #e68022;">Add to cart</a>
+<!--                         <h5 class="card-title"><strong>{{items.original_title}}</strong></h5>    -->
+                        <div class="row align-items-center" style="height: 4rem;">
+                            <div class="col-3">
+                                <div *ngIf="items.vote_average >= 7">
+                                    <div class="rating-info text-center" style="color: #82CD47;">{{items.vote_average}}</div>  
+                                </div>
+                                <div *ngIf="items.vote_average < 7">
+                                    <div class="rating-info text-center" style="color: #FCE700;">{{items.vote_average}}</div>  
+                                </div>   
+                            </div>
+                            <div class="col-9">
+                                <h5 class="card-title"><strong>{{items.original_title}}</strong></h5>
+                            </div>
+                        </div>
+
+                        <div class="row align-items-center">
+                            <a (click)="addtocart(items)" class="btn text-white border-0" style="background-color: #e68022;">Add to cart</a>
+                        </div>
+                        
+                        
                     </div>
                   </div>
             </ng-container>
