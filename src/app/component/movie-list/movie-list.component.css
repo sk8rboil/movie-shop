@@ -15,3 +15,11 @@
     width: 3rem;
     border-radius: 40px;
 }
+
+.add-btn{
+    background-color: #e68022;
+}
+
+.add-btn:hover{
+    background-color: #C69749;
+}

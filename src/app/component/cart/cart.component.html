@@ -24,23 +24,41 @@
                                         class="fa-solid fa-trash-can"></i></button>
                             </td>
                         </tr>
-
-                        <tr class="row"> 
-                            <td><button (click)="emptycart()" class="btn btn-danger">Empty Cart</button></td>
-                            <td><button routerLink="/movielist" class="btn btn-primary">Shop more</button></td>
-                            <td><button class="btn btn-success">Checkout</button>    </td>
-                              
-                        </tr>
-
-
-
-
                     </tbody>
                 </table>
-
-
             </div>
         </div>
+
+        <div class="row ">
+            <div class="col d-flex justify-content-end">
+                <button (click)="emptycart()" class="btn btn-danger mx-2">Empty Cart</button>
+                <button routerLink="/movielist" class="btn btn-primary mx-2">Shop more</button>
+                <button class="btn btn-success mx-2" data-bs-toggle="modal"
+                    data-bs-target="#exampleModal">Checkout</button>
+            </div>
+            <!-- Button trigger modal -->
+
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">Cash</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <img src="https://images.unsplash.com/photo-1595079676339-1534801ad6cf?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cXIlMjBjb2RlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="">
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Save changes</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
 
 </ng-container>

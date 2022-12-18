@@ -10,7 +10,7 @@
                     <img src="https://image.tmdb.org/t/p/w500/{{items.poster_path}}" alt="" class="card-img-top">
                     <div class="card-body">
 <!--                         <h5 class="card-title"><strong>{{items.original_title}}</strong></h5>    -->
-                        <div class="row align-items-center" style="height: 4rem;">
+                        <div class="row align-items-center" style="height: 6rem;">
                             <div class="col-3">
                                 <div *ngIf="items.vote_average >= 7">
                                     <div class="rating-info text-center" style="color: #82CD47;">{{items.vote_average}}</div>  
@@ -25,7 +25,7 @@
                         </div>
 
                         <div class="row align-items-center">
-                            <a (click)="addtocart(items)" class="btn text-white border-0" style="background-color: #e68022;">Add to cart</a>
+                            <button (click)="addtocart(items)" class="btn add-btn text-white border-0">Add to cart</button>
                         </div>
                         
                         
